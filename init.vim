@@ -5,6 +5,7 @@ set t_Co=256
 set number
 set softtabstop=0 noexpandtab
 set tabstop=4
+set shiftwidth=4
 set splitright
 
 set backupdir=~/.config/nvim/backup//
