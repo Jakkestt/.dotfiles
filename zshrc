@@ -11,6 +11,7 @@ HISTFILE=~/.cache/zsh/history
 alias python=python3
 alias pip='python3 -m pip'
 alias vim=nvim
+alias tmux='tmux -f ~/.config/tmux/.tmux.conf'
 
 autoload -U compinit
 zstyle ':completion:*' menu select

@@ -10,13 +10,15 @@
     - ~/.config/nvim/swap
     - ~/.config/nvim/undo
     - ~/.config/zsh
+    - ~/.config/tmux
+    - ~/.config/git
 
 - link:
     ~/.zprofile: zprofile
     ~/.profile: profile
-    ~/.tmux.conf: tmux.conf
+    ~/.config/tmux/.tmux.conf: tmux.conf
     ~/.config/zsh/.zshrc: zshrc
-    ~/.gitconfig: gitconfig
+    ~/.config/git/config: gitconfig
     ~/.config/nvim/init.vim: init.vim
 
 - shell:
