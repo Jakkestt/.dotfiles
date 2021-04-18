@@ -8,10 +8,7 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
 
-alias python=python3
-alias pip='python3 -m pip'
-alias vim=nvim
-alias tmux='tmux -f ~/.config/tmux/.tmux.conf'
+source ~/.config/shell/aliasrc
 
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -24,6 +21,7 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
+bindkey '^R' history-incremental-search-backward
 
 # Change cursor shape for different vi modes
 function zle-keymap-select () {
@@ -43,7 +41,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 export PATH="/Users/jakkest/Library/Python/3.8/bin:/usr/local/opt/openjdk@11/bin:$PATH"
 
-source ~/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
