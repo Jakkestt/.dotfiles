@@ -9,6 +9,7 @@ SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
 
 source ~/.config/shell/aliasrc
+source "$HOME/.cargo/env"
 
 autoload -U compinit
 zstyle ':completion:*' menu select
