@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ -f "~/.local/share/nvim/site/autload/plug.vim" ]; then
+	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+	       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+fi
+
 set -e
 
 CONFIG="install.conf.yaml"
