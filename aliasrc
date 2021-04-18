@@ -36,8 +36,8 @@ alias \
 		gp="git pull" \
 		gc="git commit" \
 		gd="git diff" \
-		gp="git patch" \
 		ga="git add" \
+		gpa="git patch" \
 		gpu="git push" \
 		gcl="git clone"
 
