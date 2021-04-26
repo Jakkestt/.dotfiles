@@ -14,6 +14,7 @@ set undodir=~/.config/nvim/undo//
 
 call plug#begin()
 Plug 'joshdick/onedark.vim'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -31,5 +32,6 @@ if (has("termguicolors"))
 endif
 
 colorscheme onedark
+let g:rustfmt_autosave = 1
 
 nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
