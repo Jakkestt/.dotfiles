@@ -35,6 +35,7 @@ fi
 alias \
 		g=git \
 		gs="git status" \
+		gr="git restore" \
 		gp="git pull" \
 		gc="git commit" \
 		gd="git diff" \
