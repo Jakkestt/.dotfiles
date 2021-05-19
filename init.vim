@@ -7,6 +7,7 @@ set softtabstop=0 noexpandtab
 set tabstop=4
 set shiftwidth=4
 set splitright
+set updatetime=300
 
 set backupdir=~/.config/nvim/backup//
 set directory=~/.config/nvim/swap//
@@ -15,6 +16,16 @@ set undodir=~/.config/nvim/undo//
 call plug#begin()
 Plug 'joshdick/onedark.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'scrooloose/nerdtree'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -30,6 +41,39 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
+
+inoremap <silent><expr> <c-space> coc#refresh()
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+nmap <c-b> :NERDTreeToggle<CR>
+
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+function! IsNERDTreeOpen()
+	return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+function! SyncTree()
+	if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+		NERDTreeFind
+		wincmd p
+	endif
+endfunction
+
+autocmd BufEnter * call SyncTree()
+
+nmap <c-_> <plug>NERDCommenterToggle
+vmap <c-_> <plug>NERDCommenterToggle
 
 colorscheme onedark
 let g:rustfmt_autosave = 1
