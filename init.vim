@@ -74,6 +74,8 @@ autocmd BufEnter * call SyncTree()
 
 nmap <c-_> <plug>NERDCommenterToggle
 vmap <c-_> <plug>NERDCommenterToggle
+nmap ++ <plug>NERDCommenterToggle
+vmap ++ <plug>NERDCommenterToggle
 
 colorscheme onedark
 let g:rustfmt_autosave = 1
