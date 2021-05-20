@@ -13,7 +13,6 @@ alias \
 alias \
 		cp="cp -iv" \
 		mv="mv -iv" \
-		rm="rm -vI" \
 		bc="bc -ql" \
 		mkd="mkdir -pv" \
 		yt="youtube-dl --add-metadata -i" \
@@ -28,6 +27,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 			grep="grep --color=auto" \
 			diff="diff --color=auto" \
 			ccat="highlight --out-format=ansi"
+			rm="rm -vI" \
 fi
 
 # Git stuff
