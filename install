@@ -2,7 +2,7 @@
 
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim ] && echo "Plug-vim already exists" || sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-[ -f "${XDG_DATA_HOME:-$HOME}"/.nvm/nvm.sh ] && echo "Nvm already exists" || curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+[ -f $HOME/.nvm/nvm.sh ] && echo "Nvm already exists" || curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
 set -e
 
