@@ -13,6 +13,10 @@ set backupdir=~/.config/nvim/backup//
 set directory=~/.config/nvim/swap//
 set undodir=~/.config/nvim/undo//
 
+nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
+vnoremap <C-c> "*y :let @+=@*<CR>
+map <C-v> "+P
+
 call plug#begin()
 Plug 'joshdick/onedark.vim'
 Plug 'rust-lang/rust.vim'
@@ -70,4 +74,3 @@ vmap ++ <plug>NERDCommenterToggle
 colorscheme onedark
 let g:rustfmt_autosave = 1
 
-nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
