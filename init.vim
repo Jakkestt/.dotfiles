@@ -15,7 +15,7 @@ set undodir=~/.config/nvim/undo//
 
 nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 vnoremap <C-c> "*y :let @+=@*<CR>
-map <C-v> "+P
+map <C-p> "+P
 
 call plug#begin()
 Plug 'joshdick/onedark.vim'
