@@ -49,6 +49,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+let g:coc_global_extensions = [ 'coc-pairs', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-json', 'coc-rust-analyzer' ]
+
 inoremap <silent><expr> <c-space> coc#refresh()
 
 inoremap <silent><expr> <TAB>
