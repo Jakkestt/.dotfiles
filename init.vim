@@ -50,6 +50,7 @@ if (has("termguicolors"))
 endif
 
 let g:coc_global_extensions = [ 'coc-pairs', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-json', 'coc-rust-analyzer' ]
+let g:airline_powerline_fonts = 1
 
 inoremap <silent><expr> <c-space> coc#refresh()
 
