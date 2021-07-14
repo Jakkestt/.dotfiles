@@ -18,7 +18,6 @@ vnoremap <C-c> "*y :let @+=@*<CR>
 map <C-p> "+P
 
 call plug#begin()
-Plug 'joshdick/onedark.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -29,7 +28,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
@@ -50,7 +48,6 @@ if (has("termguicolors"))
 endif
 
 let g:coc_global_extensions = [ 'coc-pairs', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-json', 'coc-rust-analyzer' ]
-let g:airline_powerline_fonts = 1
 
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -74,6 +71,6 @@ vmap <c-_> <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 vmap ++ <plug>NERDCommenterToggle
 
-colorscheme onedark
+"colorscheme onedark
 let g:rustfmt_autosave = 1
-
+let g:tmuxline_powerline_separators = 0
