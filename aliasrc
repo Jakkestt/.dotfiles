@@ -7,7 +7,7 @@ alias \
 		pip="python3 -m pip" \
 		vim=nvim \
 		vi=nvim \
-		tmux="tmux -f ~/.config/tmux/.tmux.conf"
+		tmux="tmux -f ~/.config/tmux/tmux.conf"
 
 # Settings that apparently I will always want
 		

@@ -19,8 +19,7 @@
 - link:
     ~/.zprofile: zprofile
     ~/.profile: profile
-    ~/.config/tmux/.tmux.conf: tmux.conf
-    ~/.config/tmux/.tmuxline: tmuxline
+    ~/.config/tmux/tmux.conf: tmux.conf
     ~/.config/zsh/.zshrc: zshrc
     ~/.config/git/config: gitconfig
     ~/.config/nvim/init.vim: init.vim

@@ -21,16 +21,6 @@ call plug#begin()
 Plug 'rust-lang/rust.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdtree'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -49,28 +39,4 @@ endif
 
 let g:coc_global_extensions = [ 'coc-pairs', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-json', 'coc-rust-analyzer' ]
 
-inoremap <silent><expr> <c-space> coc#refresh()
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-nmap <c-b> :NERDTreeToggle<CR>
-
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-nmap <c-_> <plug>NERDCommenterToggle
-vmap <c-_> <plug>NERDCommenterToggle
-nmap ++ <plug>NERDCommenterToggle
-vmap ++ <plug>NERDCommenterToggle
-
 "colorscheme onedark
-let g:rustfmt_autosave = 1
-let g:tmuxline_powerline_separators = 0
