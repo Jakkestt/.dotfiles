@@ -18,9 +18,7 @@ vnoremap <C-c> "*y :let @+=@*<CR>
 map <C-p> "+P
 
 call plug#begin()
-Plug 'rust-lang/rust.vim'
-Plug 'vim-syntastic/syntastic'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -37,6 +35,4 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-let g:coc_global_extensions = [ 'coc-pairs', 'coc-tsserver', 'coc-eslint', 'coc-prettier', 'coc-json', 'coc-rust-analyzer' ]
-
-"colorscheme onedark
+colorscheme onedark

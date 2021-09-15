@@ -15,6 +15,7 @@
     - ~/.cache/zsh
     - ~/.config/shell
     - ~/.config/alacritty
+    - ~/.config/mpv
 
 - link:
     ~/.zprofile: zprofile
@@ -26,6 +27,7 @@
     ~/.config/nvim/coc-settings.json: coc-settings.json
     ~/.config/shell/aliasrc: aliasrc
     ~/.config/alacritty/alacritty.yml: alacritty
+    ~/.config/mpv/mpv.conf: mpv.conf
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
