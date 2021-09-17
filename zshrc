@@ -1,8 +1,10 @@
 setopt autocd
 bindkey -v
+source $HOME/.dotfiles/zsh-git-prompt/zshrc.sh
 
 autoload colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%c%{$fg[red]%}]%{$reset_color%}$%b "
+#PROMPT='$(git_super_status)'
+PS1='%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%c%{$fg[red]%} $(git_super_status)]%{$reset_color%}$%b '
 
 HISTSIZE=10000000
 SAVEHIST=10000000

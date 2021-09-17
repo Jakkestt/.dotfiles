@@ -2,3 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "zsh-git-prompt"]
+	path = zsh-git-prompt
+	url = git@github.com:zsh-git-prompt/zsh-git-prompt.git
