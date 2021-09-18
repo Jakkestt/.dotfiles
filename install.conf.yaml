@@ -28,6 +28,7 @@
     ~/.config/shell/aliasrc: aliasrc
     ~/.config/alacritty/alacritty.yml: alacritty
     ~/.config/mpv/mpv.conf: mpv.conf
+    ~/.config/mpv/scripts: scripts
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
