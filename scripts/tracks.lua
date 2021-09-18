@@ -3,7 +3,8 @@ local mp = require 'mp'
 function printFilename()
 	channels = mp.get_property('track-list/count')
 	mp.commandv("show-text", channels-1)
-	if channels-2 != 0 then
+	if channels-2 ~= 0
+		then
 		command = ""
 		for i = 1,channels-1, 1 do
 			command = command .. "[aid" .. i .. "]"

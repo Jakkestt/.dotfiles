@@ -2,49 +2,48 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "marblenix/onivim2"
 tap "mongodb/brew"
-# Linux/OSX/FreeBSD resource monitor
+brew "grpc"
+brew "bear"
 brew "bpytop"
-# Cross-platform make
+brew "gettext"
+brew "glib"
+brew "cairo"
+brew "llvm"
+brew "ccls"
 brew "cmake"
-# OpenGL Extension Wrangler Library
-brew "glew"
-# C++ mathematics library for graphics software
-brew "glm"
-# GNOME XML library
-brew "libxml2"
-# Java-based project management
-brew "maven"
-# Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
-# Development kit for the Java programming language
-brew "openjdk@11"
-# Low-level access to audio, keyboard, mouse, joystick, and graphics
+brew "libtool"
+brew "unbound"
+brew "gobject-introspection"
+brew "harfbuzz"
 brew "sdl2"
-# Library for loading images as SDL surfaces and textures
+brew "ffmpeg"
+brew "glew"
+brew "glm"
+brew "hugo"
+brew "libxml2"
+brew "maven"
+brew "monero"
+brew "youtube-dl"
+brew "mpv"
+brew "neovim"
+brew "nmap"
+brew "openjdk@11"
+brew "python-tk@3.9"
 brew "sdl2_image"
-# Sample multi-channel audio mixer library
 brew "sdl2_mixer"
-# Library for using TrueType fonts in SDL applications
 brew "sdl2_ttf"
-# Terminal multiplexer
 brew "tmux"
-# Internet file retriever
 brew "wget"
-# General-purpose lossless data-compression library
 brew "zlib"
-# High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community"
-# Open-source KVM software
 cask "barrier"
-# Web browser
+cask "discord"
+cask "electrum"
 cask "firefox"
-# Free and open-source image editor
 cask "gimp"
-# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 cask "speedcrunch"
-# Open-source code editor
-cask "visual-studio-code"
+cask "spotify"
