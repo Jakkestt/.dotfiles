@@ -15,10 +15,13 @@ set undodir=~/.config/nvim/undo//
 
 nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 vnoremap <C-c> "*y :let @+=@*<CR>
+inoremap <C-space> <C-n>
+inoremap <C-j> <C-n>
 map <C-p> "+P
 
 call plug#begin()
 Plug 'joshdick/onedark.vim'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -34,5 +37,7 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
+
+let g:airline#extensions#tabline#enabled = 1
 
 colorscheme onedark
