@@ -7,4 +7,4 @@ export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 #export CLUTTER_BACKEND=wayland
 #export SDL_VIDEODRIVER=wayland
 
-setxkbmap -option caps:swapescape
+setxkbmap -option caps:escape
