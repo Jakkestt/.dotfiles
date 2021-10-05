@@ -16,8 +16,6 @@ set undodir=~/.config/nvim/undo//
 
 nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 vnoremap <C-c> "*y :let @+=@*<CR>
-inoremap <C-space> <C-n>
-inoremap <C-j> <C-n>
 map <C-p> "+P
 
 call plug#begin()
@@ -40,6 +38,13 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
+
+luafile ~/.config/nvim/lua/compe-config.lua
+"luafile ~/.config/nvim/lua/python-ls.lua
+"luafile ~/.config/nvim/lua/rust-ls.lua
+lua << EOF
+require('lspconfig').pyright.setup()
+EOF
 
 " LSP config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
