@@ -24,7 +24,6 @@
     ~/.config/zsh/.zshrc: zshrc
     ~/.config/git/config: gitconfig
     ~/.config/nvim/init.vim: init.vim
-    ~/.config/nvim/coc-settings.json: coc-settings.json
     ~/.config/shell/aliasrc: aliasrc
     ~/.config/alacritty/alacritty.yml: alacritty
     ~/.config/mpv/mpv.conf: mpv.conf
