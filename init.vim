@@ -24,6 +24,7 @@ Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -59,6 +60,8 @@ luafile ~/.config/nvim/lua/compe-config.lua
 luafile ~/.config/nvim/lua/python-lsp.lua
 luafile ~/.config/nvim/lua/rust-lsp.lua
 luafile ~/.config/nvim/lua/clangd-lsp.lua
+
+nnoremap <silent> <C-B> :NERDTreeToggle<CR>
 
 let g:airline#extensions#tabline#enabled = 1
 
