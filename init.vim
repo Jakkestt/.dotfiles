@@ -9,6 +9,7 @@ set shiftwidth=4
 set splitright
 set updatetime=300
 set autoindent
+set mouse=a
 
 set backupdir=~/.config/nvim/backup//
 set directory=~/.config/nvim/swap//
@@ -57,6 +58,7 @@ autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
 luafile ~/.config/nvim/lua/compe-config.lua
 luafile ~/.config/nvim/lua/python-lsp.lua
 luafile ~/.config/nvim/lua/rust-lsp.lua
+luafile ~/.config/nvim/lua/clangd-lsp.lua
 
 let g:airline#extensions#tabline#enabled = 1
 

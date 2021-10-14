@@ -32,6 +32,7 @@
     ~/.config/nvim/lua/compe-config.lua: lua/compe-config.lua
     ~/.config/nvim/lua/python-lsp.lua: lua/python-lsp.lua
     ~/.config/nvim/lua/rust-lsp.lua: lua/rust-lsp.lua
+    ~/.config/nvim/lua/clangd-lsp.lua: lua/clangd-lsp.lua
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
