@@ -18,6 +18,9 @@ set undodir=~/.config/nvim/undo//
 nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 vnoremap <C-c> "*y :let @+=@*<CR>
 map <C-p> "+P
+map <silent> <TAB> :bn<cr>
+map <silent> <S-TAB> :bp<cr>
+map <silent> <C-w> :bd<cr>
 
 call plug#begin()
 Plug 'dracula/vim', { 'name': 'dracula' }
@@ -25,6 +28,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -60,6 +65,13 @@ luafile ~/.config/nvim/lua/compe-config.lua
 luafile ~/.config/nvim/lua/python-lsp.lua
 luafile ~/.config/nvim/lua/rust-lsp.lua
 luafile ~/.config/nvim/lua/clangd-lsp.lua
+
+nnoremap <silent> <C-p> :Files<CR>
+let g:fzf_action = {
+	\ 'ctrl-t': 'tab split',
+	\ 'ctrl-s': 'split',
+	\ 'ctrl-v': 'vsplit'
+	\}
 
 nnoremap <silent> <C-B> :NERDTreeToggle<CR>
 
