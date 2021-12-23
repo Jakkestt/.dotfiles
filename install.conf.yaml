@@ -5,10 +5,6 @@
 - clean: ['~']
 
 - create:
-    - ~/.config/nvim
-    - ~/.config/nvim/backup
-    - ~/.config/nvim/swap
-    - ~/.config/nvim/undo
     - ~/.config/zsh
     - ~/.config/tmux
     - ~/.config/git
@@ -16,7 +12,6 @@
     - ~/.config/shell
     - ~/.config/alacritty
     - ~/.config/mpv
-    - ~/.config/nvim/lua
 
 - link:
     ~/.zprofile: zprofile
@@ -24,15 +19,13 @@
     ~/.config/tmux/tmux.conf: tmux.conf
     ~/.config/zsh/.zshrc: zshrc
     ~/.config/git/config: gitconfig
-    ~/.config/nvim/init.vim: init.vim
+    ~/.config/nvim:
+      force: true
+      path: nvim
     ~/.config/shell/aliasrc: aliasrc
     ~/.config/alacritty/alacritty.yml: alacritty
     ~/.config/mpv/mpv.conf: mpv.conf
     ~/.config/mpv/scripts: scripts
-    ~/.config/nvim/lua/compe-config.lua: lua/compe-config.lua
-    ~/.config/nvim/lua/python-lsp.lua: lua/python-lsp.lua
-    ~/.config/nvim/lua/rust-lsp.lua: lua/rust-lsp.lua
-    ~/.config/nvim/lua/clangd-lsp.lua: lua/clangd-lsp.lua
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

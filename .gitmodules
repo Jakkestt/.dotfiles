@@ -5,3 +5,6 @@
 [submodule "zsh-git-prompt"]
 	path = zsh-git-prompt
 	url = git@github.com:zsh-git-prompt/zsh-git-prompt.git
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/Jakkestt/nvim.git
