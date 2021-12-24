@@ -186,7 +186,7 @@ colors:
     cursor: '0xcccccc'
 
   normal:
-    black:   '0x007acc'
+    black:   '0x3e3e42'
     red:     '0xc62f37'
     green:   '0x37be78'
     yellow:  '0xe2e822'
