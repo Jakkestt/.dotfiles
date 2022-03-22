@@ -11,6 +11,8 @@
     - ~/.cache/zsh
     - ~/.config/shell
     - ~/.config/alacritty
+    - ~/.config/lf
+    - ~/.local/bin
 
 - link:
     ~/.zprofile: zprofile
@@ -24,6 +26,10 @@
     ~/.config/shell/aliasrc: aliasrc
     ~/.config/alacritty/alacritty.yml: alacritty
     ~/.config/mpv/mpv.conf: mpv.conf
+    ~/.config/lf/lfrc: lfrc
+    ~/.config/lf/scope: scope
+    ~/.config/lf/cleaner: cleaner
+    ~/.local/bin/lfub: lfub
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

@@ -45,3 +45,7 @@ alias \
 		gpu="git push" \
 		gcl="git clone"
 
+# Misc
+
+alias \
+		lf=lfub \
