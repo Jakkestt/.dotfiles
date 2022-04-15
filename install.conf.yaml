@@ -25,7 +25,6 @@
       path: nvim
     ~/.config/shell/aliasrc: aliasrc
     ~/.config/alacritty/alacritty.yml: alacritty
-    ~/.config/mpv/mpv.conf: mpv.conf
     ~/.config/lf/lfrc: lfrc
     ~/.config/lf/scope: scope
     ~/.config/lf/cleaner: cleaner

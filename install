@@ -4,6 +4,8 @@
 
 [ -f $HOME/.nvm/nvm.sh ] && echo "Nvm already exists" ||  mkdir ~/.nvm | curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
+[ -f $HOME/.local/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] && echo "Fast Syntax Highlighting already cloned" || git clone https://github.com/zdharma-continuum/fast-syntax-highlighting $HOME/.local/share/zsh/plugins/fast-syntax-highlighting | bash
+
 set -e
 
 CONFIG="install.conf.yaml"
