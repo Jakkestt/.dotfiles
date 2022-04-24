@@ -43,7 +43,6 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 export PATH="/home/jarkko/.local/bin:/Users/Jakkest/Library/Python/3.8/bin:/usr/local/opt/openjdk@11/bin:$PATH"
 
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 source $HOME/.local/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2> /dev/null
 
 export NVM_DIR="$HOME/.nvm"
