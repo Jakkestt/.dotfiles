@@ -29,6 +29,7 @@
     ~/.config/lf/scope: scope
     ~/.config/lf/cleaner: cleaner
     ~/.local/bin/lfub: lfub
+    ~/.local/bin/rotdir: rotdir
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
