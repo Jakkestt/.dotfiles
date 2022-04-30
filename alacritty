@@ -111,7 +111,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: monospace
+    family: JetBrainsMono NF
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -175,35 +175,64 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Tomorrow Night)
+# (Some coloscheme)
+#colors:
+#  primary:
+#    background: '0x1e1e1e'
+#    foreground: '0xcccccc'
+#
+#  cursor:
+#    text:   '0x7f85a3'
+#    cursor: '0xcccccc'
+#
+#  normal:
+#    black:   '0x3e3e42'
+#    red:     '0xc62f37'
+#    green:   '0x37be78'
+#    yellow:  '0xe2e822'
+#    blue:    '0x396ec7'
+#    magenta: '0xb835bc'
+#    cyan:    '0x3ba7cc'
+#    white:   '0xe5e5e5'
+#
+#  bright:
+#    black:   '0x666666'
+#    red:     '0xe94a51'
+#    green:   '0x45d38a'
+#    yellow:  '0xf2f84a'
+#    blue:    '0x4e8ae9'
+#    magenta: '0xd26ad6'
+#    cyan:    '0x49b7da'
+#    white:   '0xe5e5e5'
+
+# Colors (Ayu Dark)
 colors:
+  # Default colors
   primary:
-    background: '0x1e1e1e'
-    foreground: '0xcccccc'
+    background: '0x0f1419'
+    foreground: '0xe6e1cf'
 
-  cursor:
-    text:   '0x7f85a3'
-    cursor: '0xcccccc'
-
+  # Normal colors
   normal:
-    black:   '0x3e3e42'
-    red:     '0xc62f37'
-    green:   '0x37be78'
-    yellow:  '0xe2e822'
-    blue:    '0x396ec7'
-    magenta: '0xb835bc'
-    cyan:    '0x3ba7cc'
-    white:   '0xe5e5e5'
+    black:   '0x000000'
+    red:     '0xf34a4a'
+    green:   '0xbae67e'
+    yellow:  '0xffee99'
+    blue:    '0x73d0ff'
+    magenta: '0xd4bfff'
+    cyan:    '0x83CEC6'
+    white:   '0xf2f2f2'
 
+  # Bright colors
   bright:
-    black:   '0x666666'
-    red:     '0xe94a51'
-    green:   '0x45d38a'
-    yellow:  '0xf2f84a'
-    blue:    '0x4e8ae9'
-    magenta: '0xd26ad6'
-    cyan:    '0x49b7da'
-    white:   '0xe5e5e5'
+    black:   '0x737d87'
+    red:     '0xff3333'
+    green:   '0xc2d94c'
+    yellow:  '0xe7c547'
+    blue:    '0x59c2ff'
+    magenta: '0xb77ee0'
+    cyan:    '0x5ccfe6'
+    white:   '0xffffff'
 
   # Cursor colors
   #
