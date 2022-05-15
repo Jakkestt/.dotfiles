@@ -6,6 +6,8 @@ git submodule update --remote
 
 [ -f $HOME/.local/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] && echo "Fast Syntax Highlighting already cloned" || git clone https://github.com/zdharma-continuum/fast-syntax-highlighting $HOME/.local/share/zsh/plugins/fast-syntax-highlighting | bash
 
+[ -f $HOME/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh ] && echo "Zsh Autosuggestions already cloned" || git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.local/share/zsh/plugins/zsh-autosuggestions | bash
+
 set -e
 
 CONFIG="install.conf.yaml"

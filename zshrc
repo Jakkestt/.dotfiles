@@ -45,6 +45,7 @@ export PATH="/home/jarkko/.local/bin:/Users/Jakkest/Library/Python/3.8/bin:/usr/
 export EDITOR=nvim
 
 source $HOME/.local/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2> /dev/null
+source $HOME/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh 2> /dev/null
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
