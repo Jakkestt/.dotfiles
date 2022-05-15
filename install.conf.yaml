@@ -13,6 +13,7 @@
     - ~/.config/alacritty
     - ~/.config/lf
     - ~/.local/bin
+    - ~/.config/zathura
 
 - link:
     ~/.zprofile: zprofile
@@ -30,6 +31,7 @@
     ~/.config/lf/cleaner: cleaner
     ~/.local/bin/lfub: lfub
     ~/.local/bin/rotdir: rotdir
+    ~/.config/zathura/zathurarc: zathurarc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
