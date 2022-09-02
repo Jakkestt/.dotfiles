@@ -122,7 +122,6 @@ local config = {
     mappings = {
       n = {
         -- ["<leader>lf"] = false -- disable formatting keymap
-        ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Search files" },
       },
     },
     -- add to the global LSP on_attach function
@@ -171,6 +170,7 @@ local config = {
       ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+      ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Search files" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
@@ -186,7 +186,7 @@ local config = {
       {
         "ellisonleao/gruvbox.nvim",
         as = "gruvbox",
-        config = require("gruvbox").setup {},
+        config = function() require("gruvbox").setup() end,
       },
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
