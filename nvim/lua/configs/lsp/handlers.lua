@@ -17,11 +17,6 @@ astronvim.lsp.setup = function(server)
 end
 
 astronvim.lsp.on_attach = function(client, bufnr)
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    desc = "Auto format before save",
-    pattern = "<buffer>",
-    callback = vim.lsp.buf.formatting_sync,
-  })
   astronvim.set_mappings(
     user_plugin_opts("lsp.mappings", {
       n = {
@@ -31,6 +26,7 @@ astronvim.lsp.on_attach = function(client, bufnr)
         ["<leader>lh"] = { function() vim.lsp.buf.signature_help() end, desc = "Signature help" },
         ["<leader>lr"] = { function() vim.lsp.buf.rename() end, desc = "Rename current symbol" },
         ["gD"] = { function() vim.lsp.buf.declaration() end, desc = "Declaration of current symbol" },
+        ["gT"] = { function() vim.lsp.buf.type_definition() end, desc = "Definition of current type" },
         ["gI"] = { function() vim.lsp.buf.implementation() end, desc = "Implementation of current symbol" },
         ["gd"] = { function() vim.lsp.buf.definition() end, desc = "Show the definition of current symbol" },
         ["gr"] = { function() vim.lsp.buf.references() end, desc = "References of current symbol" },
@@ -39,9 +35,21 @@ astronvim.lsp.on_attach = function(client, bufnr)
         ["]d"] = { function() vim.diagnostic.goto_next() end, desc = "Next diagnostic" },
         ["gl"] = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },
       },
+      v = {
+        ["<leader>la"] = { function() vim.lsp.buf.range_code_action() end, desc = "Range LSP code action" },
+        ["<leader>lf"] = {
+          function()
+            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, true, true), "n", false)
+            vim.lsp.buf.range_formatting()
+          end,
+          desc = "Range format code",
+        },
+      },
     }),
     { buffer = bufnr }
   )
+
+  astronvim.which_key_register({ v = { ["<leader>"] = { l = { name = "LSP" } } } }, { buffer = bufnr })
 
   vim.api.nvim_buf_create_user_command(
     bufnr,
@@ -104,6 +112,9 @@ function astronvim.lsp.server_settings(server_name)
   return opts
 end
 
-function astronvim.lsp.disable_formatting(client) client.resolved_capabilities.document_formatting = false end
+function astronvim.lsp.disable_formatting(client)
+  client.resolved_capabilities.document_formatting = false
+  client.resolved_capabilities.document_range_formatting = false
+end
 
 return astronvim.lsp

@@ -48,7 +48,10 @@ local astro_plugins = {
   },
 
   -- LSP Icons
-  ["onsails/lspkind.nvim"] = { module = "lspkind" },
+  ["onsails/lspkind.nvim"] = {
+    module = "lspkind",
+    config = function() require "configs.lspkind" end,
+  },
 
   -- Bufferline
   ["akinsho/bufferline.nvim"] = {
@@ -58,6 +61,12 @@ local astro_plugins = {
 
   -- Better buffer closing
   ["famiu/bufdelete.nvim"] = { cmd = { "Bdelete", "Bwipeout" } },
+
+  ["s1n7ax/nvim-window-picker"] = {
+    tag = "v1.*",
+    module = "window-picker",
+    config = function() require "configs.window-picker" end,
+  },
 
   -- File explorer
   ["nvim-neo-tree/neo-tree.nvim"] = {

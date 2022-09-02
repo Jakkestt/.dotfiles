@@ -26,20 +26,20 @@ local config = {
   },
 
   -- Set colorscheme to use
-  colorscheme = "default_theme",
+  colorscheme = "gruvbox",
 
-  -- Override highlight groups in any theme
-  highlights = {
-    -- duskfox = { -- a table of overrides/changes to the default
-    --   Normal = { bg = "#000000" },
-    -- },
-    default_theme = function(highlights) -- or a function that returns a new table of colors to set
-      local C = require "default_theme.colors"
+  ---- Override highlight groups in any theme
+  --highlights = {
+  --  -- duskfox = { -- a table of overrides/changes to the default
+  --  --   Normal = { bg = "#000000" },
+  --  -- },
+  --  default_theme = function(highlights) -- or a function that returns a new table of colors to set
+  --    local C = require "gruvbox.colors"
 
-      highlights.Normal = { fg = C.fg, bg = C.bg }
-      return highlights
-    end,
-  },
+  --    highlights.Normal = { fg = C.fg, bg = C.bg }
+  --    return highlights
+  --  end,
+  --},
 
   -- set vim options here (vim.<first_key>.<second_key> =  value)
   options = {
@@ -76,35 +76,35 @@ local config = {
   },
 
   -- Default theme configuration
-  default_theme = {
-    -- set the highlight style for diagnostic messages
-    diagnostics_style = { italic = true },
-    -- Modify the color palette for the default theme
-    colors = {
-      fg = "#abb2bf",
-      bg = "#1e222a",
-    },
-    -- enable or disable highlighting for extra plugins
-    plugins = {
-      aerial = true,
-      beacon = false,
-      bufferline = true,
-      dashboard = true,
-      highlighturl = true,
-      hop = false,
-      indent_blankline = true,
-      lightspeed = false,
-      ["neo-tree"] = true,
-      notify = true,
-      ["nvim-tree"] = false,
-      ["nvim-web-devicons"] = true,
-      rainbow = true,
-      symbols_outline = false,
-      telescope = true,
-      vimwiki = false,
-      ["which-key"] = true,
-    },
-  },
+  --default_theme = {
+  --  -- set the highlight style for diagnostic messages
+  --  diagnostics_style = { italic = true },
+  --  -- Modify the color palette for the default theme
+  --  colors = {
+  --    fg = "#abb2bf",
+  --    bg = "#1e222a",
+  --  },
+  --  -- enable or disable highlighting for extra plugins
+  --  plugins = {
+  --    aerial = true,
+  --    beacon = false,
+  --    bufferline = true,
+  --    dashboard = true,
+  --    highlighturl = true,
+  --    hop = false,
+  --    indent_blankline = true,
+  --    lightspeed = false,
+  --    ["neo-tree"] = true,
+  --    notify = true,
+  --    ["nvim-tree"] = false,
+  --    ["nvim-web-devicons"] = true,
+  --    rainbow = true,
+  --    symbols_outline = false,
+  --    telescope = true,
+  --    vimwiki = false,
+  --    ["which-key"] = true,
+  --  },
+  --},
 
   -- Diagnostics configuration (for vim.diagnostics.config({...}))
   diagnostics = {
@@ -122,6 +122,7 @@ local config = {
     mappings = {
       n = {
         -- ["<leader>lf"] = false -- disable formatting keymap
+        ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Search files" },
       },
     },
     -- add to the global LSP on_attach function
@@ -182,6 +183,11 @@ local config = {
   -- Configure plugins
   plugins = {
     init = {
+      {
+        "ellisonleao/gruvbox.nvim",
+        as = "gruvbox",
+        config = require("gruvbox").setup {},
+      },
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
@@ -316,3 +322,16 @@ local config = {
 }
 
 return config
+
+--return {
+--
+--  plugins = {
+--    init = {
+--      {
+--        "catppuccin/nvim",
+--        as = "catppuccin",
+--        config = function() require("catppuccin").setup {} end,
+--      },
+--    },
+--  },
+--}
