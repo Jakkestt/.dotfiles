@@ -173,7 +173,7 @@ local config = {
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
       ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Search files" },
       ["<C-l>"] = { "<cmd>:nohl<cr>" },
-      ["<C-w>"] = { "<cmd>Bdelete<cr>" },
+      ["<C-q>"] = { "<cmd>Bdelete<cr>" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
