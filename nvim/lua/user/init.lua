@@ -114,6 +114,7 @@ local config = {
 
   -- Extend LSP configuration
   lsp = {
+    --skip_setup = { "rust-analyzer" },
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
@@ -171,6 +172,8 @@ local config = {
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
       ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Search files" },
+      ["<C-l>"] = { "<cmd>:nohl<cr>" },
+      ["<C-w>"] = { "<cmd>Bdelete<cr>" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
@@ -187,6 +190,17 @@ local config = {
         "ellisonleao/gruvbox.nvim",
         as = "gruvbox",
         config = function() require("gruvbox").setup() end,
+      },
+      {
+        "simrat39/rust-tools.nvim",
+        after = "mason-lspconfig.nvim", -- make sure to load after mason-lspconfig
+        config = function()
+          require("rust-tools").setup {
+            server = {
+              astronvim.lsp.server_settings "rust_analyzer",
+            }, -- get the server settings and built in capabilities/on_attach
+          }
+        end,
       },
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
@@ -240,7 +254,7 @@ local config = {
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-      ensure_installed = { "sumneko_lua" },
+      ensure_installed = { "sumneko_lua", "rust_analyzer" },
     },
     -- use mason-tool-installer to configure DAP/Formatters/Linter installation
     ["mason-tool-installer"] = { -- overrides `require("mason-tool-installer").setup(...)`

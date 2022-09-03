@@ -58,6 +58,12 @@ astronvim.lsp.on_attach = function(client, bufnr)
     { desc = "Format file with LSP" }
   )
 
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    desc = "Auto format before save",
+    pattern = "<buffer>",
+    callback = vim.lsp.buf.formatting_sync,
+  })
+
   if client.resolved_capabilities.document_highlight then
     vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
     vim.api.nvim_create_autocmd("CursorHold", {
