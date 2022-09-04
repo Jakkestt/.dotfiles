@@ -26,20 +26,20 @@ local config = {
   },
 
   -- Set colorscheme to use
-  colorscheme = "gruvbox",
+  colorscheme = "default_theme",
 
-  ---- Override highlight groups in any theme
-  --highlights = {
-  --  -- duskfox = { -- a table of overrides/changes to the default
-  --  --   Normal = { bg = "#000000" },
-  --  -- },
-  --  default_theme = function(highlights) -- or a function that returns a new table of colors to set
-  --    local C = require "gruvbox.colors"
+  -- Override highlight groups in any theme
+  highlights = {
+    -- duskfox = { -- a table of overrides/changes to the default
+    --   Normal = { bg = "#000000" },
+    -- },
+    default_theme = function(highlights) -- or a function that returns a new table of colors to set
+      local C = require "default_theme.colors"
 
-  --    highlights.Normal = { fg = C.fg, bg = C.bg }
-  --    return highlights
-  --  end,
-  --},
+      highlights.Normal = { fg = C.fg, bg = C.bg }
+      return highlights
+    end,
+  },
 
   -- set vim options here (vim.<first_key>.<second_key> =  value)
   options = {
@@ -76,35 +76,55 @@ local config = {
   },
 
   -- Default theme configuration
-  --default_theme = {
-  --  -- set the highlight style for diagnostic messages
-  --  diagnostics_style = { italic = true },
-  --  -- Modify the color palette for the default theme
-  --  colors = {
-  --    fg = "#abb2bf",
-  --    bg = "#1e222a",
-  --  },
-  --  -- enable or disable highlighting for extra plugins
-  --  plugins = {
-  --    aerial = true,
-  --    beacon = false,
-  --    bufferline = true,
-  --    dashboard = true,
-  --    highlighturl = true,
-  --    hop = false,
-  --    indent_blankline = true,
-  --    lightspeed = false,
-  --    ["neo-tree"] = true,
-  --    notify = true,
-  --    ["nvim-tree"] = false,
-  --    ["nvim-web-devicons"] = true,
-  --    rainbow = true,
-  --    symbols_outline = false,
-  --    telescope = true,
-  --    vimwiki = false,
-  --    ["which-key"] = true,
-  --  },
-  --},
+  default_theme = {
+    colors = function(C)
+      C.telescope_green = C.green
+      C.telescope_red = C.red
+      C.telescope_fg = C.fg
+      C.telescope_bg = C.black_1
+      C.telescope_bg_alt = C.bg_1
+      return C
+    end,
+    highlights = function(hl)
+      local C = require "default_theme.colors"
+      hl.TelescopeBorder = { fg = C.telescope_bg_alt, bg = C.telescope_bg }
+      hl.TelescopeNormal = { bg = C.telescope_bg }
+      hl.TelescopePreviewBorder = { fg = C.telescope_bg, bg = C.telescope_bg }
+      hl.TelescopePreviewNormal = { bg = C.telescope_bg }
+      hl.TelescopePreviewTitle = { fg = C.telescope_bg, bg = C.telescope_green }
+      hl.TelescopePromptBorder = { fg = C.telescope_bg_alt, bg = C.telescope_bg_alt }
+      hl.TelescopePromptNormal = { fg = C.telescope_fg, bg = C.telescope_bg_alt }
+      hl.TelescopePromptPrefix = { fg = C.telescope_red, bg = C.telescope_bg_alt }
+      hl.TelescopePromptTitle = { fg = C.telescope_bg, bg = C.telescope_red }
+      hl.TelescopeResultsBorder = { fg = C.telescope_bg, bg = C.telescope_bg }
+      hl.TelescopeResultsNormal = { bg = C.telescope_bg }
+      hl.TelescopeResultsTitle = { fg = C.telescope_bg, bg = C.telescope_bg }
+      return hl
+    end,
+    -- set the highlight style for diagnostic messages
+    diagnostics_style = { italic = true },
+    -- Modify the color palette for the default theme
+    -- enable or disable highlighting for extra plugins
+    plugins = {
+      aerial = true,
+      beacon = false,
+      bufferline = true,
+      dashboard = true,
+      highlighturl = true,
+      hop = false,
+      indent_blankline = true,
+      lightspeed = false,
+      ["neo-tree"] = true,
+      notify = true,
+      ["nvim-tree"] = false,
+      ["nvim-web-devicons"] = true,
+      rainbow = true,
+      symbols_outline = false,
+      telescope = true,
+      vimwiki = false,
+      ["which-key"] = true,
+    },
+  },
 
   -- Diagnostics configuration (for vim.diagnostics.config({...}))
   diagnostics = {
@@ -172,7 +192,6 @@ local config = {
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
       ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Search files" },
-      ["<C-l>"] = { "<cmd>:nohl<cr>" },
       ["<C-q>"] = { "<cmd>Bdelete<cr>" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
@@ -186,11 +205,6 @@ local config = {
   -- Configure plugins
   plugins = {
     init = {
-      {
-        "ellisonleao/gruvbox.nvim",
-        as = "gruvbox",
-        config = function() require("gruvbox").setup() end,
-      },
       {
         "simrat39/rust-tools.nvim",
         after = "mason-lspconfig.nvim", -- make sure to load after mason-lspconfig
@@ -263,6 +277,87 @@ local config = {
     packer = { -- overrides `require("packer").setup(...)`
       compile_path = vim.fn.stdpath "data" .. "/packer_compiled.lua",
     },
+    --vim.api.nvim_create_autocmd("ColorScheme", {
+    --  desc = "Set custom highlight groups",
+    --  callback = function()
+    --    if vim.g.colors_name == "gruvbox" then
+    --      -- set your colors here...
+    --      vim.api.nvim_set_hl(0, "Normal", { fg = "#FFFFFF", bg = "#000000" })
+    --    end
+    --  end,
+    --}),
+    --feline = {
+    --  disable = { filetypes = { "^NvimTree$", "^neo%-tree$", "^dashboard$", "^Outline$", "^aerial$" } },
+    --  theme = {
+    --    fg = status.get_hl_prop("Feline", "foreground", colors.fg),
+    --    bg = status.get_hl_prop("Feline", "background", colors.bg_1),
+    --  },
+    --  components = {
+    --    active = {
+    --      {
+    --        status.colored_spacer(1),
+    --        status.spacer(2),
+    --        {
+    --          provider = "git_branch",
+    --          hl = status.fg_hl(colors.purple_1, "Conditional", "foreground", { style = "bold" }),
+    --          icon = " ",
+    --        },
+    --        status.spacer(3, status.git_head_available),
+    --        {
+    --          provider = { name = "file_type", opts = { filetype_icon = true, case = "lowercase" } },
+    --          enabled = status.filetype_available,
+    --        },
+    --        status.spacer(2, status.filetype_available),
+    --        { provider = "git_diff_added", hl = status.fg_hl(colors.green, "GitSignsAdd"), icon = "  " },
+    --        { provider = "git_diff_changed", hl = status.fg_hl(colors.orange_1, "GitSignsChange"), icon = " 柳" },
+    --        { provider = "git_diff_removed", hl = status.fg_hl(colors.red_1, "GitSignsDelete"), icon = "  " },
+    --        status.spacer(2, status.git_changed),
+    --        {
+    --          provider = "diagnostic_errors",
+    --          enabled = status.diagnostic_exists "ERROR",
+    --          hl = status.fg_hl(colors.red_1, "DiagnosticError"),
+    --          icon = "  ",
+    --        },
+    --        {
+    --          provider = "diagnostic_warnings",
+    --          enabled = status.diagnostic_exists "WARN",
+    --          hl = status.fg_hl(colors.orange_1, "DiagnosticWarn"),
+    --          icon = "  ",
+    --        },
+    --        {
+    --          provider = "diagnostic_info",
+    --          enabled = status.diagnostic_exists "INFO",
+    --          hl = status.fg_hl(colors.white_2, "DiagnosticInfo"),
+    --          icon = "  ",
+    --        },
+    --        {
+    --          provider = "diagnostic_hints",
+    --          enabled = status.diagnostic_exists "HINT",
+    --          hl = status.fg_hl(colors.yellow_1, "DiagnosticHint"),
+    --          icon = "  ",
+    --        },
+    --      },
+    --      {
+    --        { provider = status.lsp_progress, hl = { gui = "none" }, enabled = status.hide_in_width },
+    --        { provider = "lsp_client_names", hl = { gui = "none" }, icon = "   ", enabled = status.hide_in_width },
+    --        status.spacer(2, status.hide_in_width),
+    --        {
+    --          provider = status.treesitter_status,
+    --          hl = status.fg_hl(colors.green, "GitSignsAdd"),
+    --          enabled = status.hide_in_width,
+    --        },
+    --        status.spacer(2),
+    --        { provider = "position" },
+    --        status.spacer(2),
+    --        { provider = "line_percentage" },
+    --        status.spacer(1),
+    --        { provider = "scroll_bar", hl = status.fg_hl(colors.yellow, "TypeDef") },
+    --        status.spacer(2),
+    --        status.colored_spacer(1),
+    --      },
+    --    },
+    --  },
+    --},
   },
 
   -- LuaSnip Options
