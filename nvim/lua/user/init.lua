@@ -134,7 +134,7 @@ local config = {
 
   -- Extend LSP configuration
   lsp = {
-    --skip_setup = { "rust-analyzer" },
+    skip_setup = { "rust-analyzer" },
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
@@ -193,6 +193,7 @@ local config = {
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
       ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Search files" },
       ["<C-q>"] = { "<cmd>Bdelete<cr>" },
+      ["<C-f>"] = function() vim.lsp.buf.formatting_sync() end,
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
@@ -413,6 +414,11 @@ local config = {
       group = "packer_conf",
       pattern = "plugins.lua",
       command = "source <afile> | PackerSync",
+    })
+    vim.api.nvim_create_augroup("FormatAutogroup", { clear = true })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      desc = "Auto format before save",
+      command = "lua vim.lsp.buf.formatting_sync(nil, 1000)",
     })
 
     -- Set up custom filetypes
