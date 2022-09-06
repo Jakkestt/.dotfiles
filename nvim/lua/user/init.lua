@@ -194,6 +194,7 @@ local config = {
       ["<C-p>"] = { function() require("telescope.builtin").find_files() end, desc = "Search files" },
       ["<C-q>"] = { "<cmd>Bdelete<cr>" },
       ["<C-f>"] = function() vim.lsp.buf.formatting_sync() end,
+      ["<F5>"] = { "<cmd>!cargo run<cr>", desc = "cargo run" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
