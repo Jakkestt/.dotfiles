@@ -174,6 +174,11 @@ local config = {
       --     client.resolved_capabilities.document_formatting = false
       --   end
       -- }
+      clangd = {
+        capabilities = {
+          offsetEncoding = "utf-8",
+        },
+      },
     },
   },
 
@@ -218,6 +223,15 @@ local config = {
           }
         end,
       },
+      --{
+      --  "p00f/clangd_extensions.nvim",
+      --  after = "mason-lspconfig.nvim", -- make sure to load after mason-lspconfig
+      --  config = function()
+      --    require("clangd_extensions").setup {
+      --      server = astronvim.lsp.server_settings "clangd",
+      --    }
+      --  end,
+      --},
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
@@ -270,7 +284,7 @@ local config = {
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-      ensure_installed = { "sumneko_lua", "rust_analyzer" },
+      ensure_installed = { "sumneko_lua", "rust_analyzer", "clangd" },
     },
     -- use mason-tool-installer to configure DAP/Formatters/Linter installation
     ["mason-tool-installer"] = { -- overrides `require("mason-tool-installer").setup(...)`
