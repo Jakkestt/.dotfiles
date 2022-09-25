@@ -331,6 +331,20 @@ function astronvim.null_ls_providers(filetype)
   return registered
 end
 
+--- Register a null-ls source given a name if it has not been manually configured in the null-ls configuration
+-- @param source the source name to register from all builtin types
+function astronvim.null_ls_register(source)
+  -- try to load null-ls
+  local null_ls_avail, null_ls = pcall(require, "null-ls")
+  if null_ls_avail then
+    if null_ls.is_registered(source) then return end
+    for _, type in ipairs { "diagnostics", "formatting", "code_actions", "completion", "hover" } do
+      local builtin = require("null-ls.builtins._meta." .. type)
+      if builtin[source] then null_ls.register(null_ls.builtins[type][source]) end
+    end
+  end
+end
+
 --- Get the null-ls sources for a given null-ls method
 -- @param filetype the filetype to search null-ls for
 -- @param method the null-ls method (check null-ls documentation for available methods)
@@ -386,14 +400,14 @@ function astronvim.set_mappings(map_table, base)
       -- build the options for the command accordingly
       if options then
         local cmd = options
+        local keymap_opts = base or {}
         if type(options) == "table" then
           cmd = options[1]
-          options[1] = nil
-        else
-          options = {}
+          keymap_opts = vim.tbl_deep_extend("force", options, keymap_opts)
+          keymap_opts[1] = nil
         end
         -- extend the keybinding options with the base provided and set the mapping
-        map(mode, keymap, cmd, vim.tbl_deep_extend("force", options, base or {}))
+        map(mode, keymap, cmd, keymap_opts)
       end
     end
   end

@@ -223,6 +223,9 @@ local config = {
           }
         end,
       },
+      {
+        "nvim-treesitter/nvim-treesitter-context",
+      },
       --{
       --  "p00f/clangd_extensions.nvim",
       --  after = "mason-lspconfig.nvim", -- make sure to load after mason-lspconfig
@@ -280,7 +283,7 @@ local config = {
       return config -- return final config table to use in require("null-ls").setup(config)
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
-      ensure_installed = { "lua" },
+      ensure_installed = { "lua", "rust", "c" },
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
