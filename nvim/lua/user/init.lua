@@ -1,5 +1,6 @@
 --              AstroNvim Configuration Table
 -- All configuration changes should go inside of the table below
+-- This is a comment
 
 -- You can think of a Lua "table" as a dictionary like data structure the
 -- normal format is "key = value". These also handle array like data structures
