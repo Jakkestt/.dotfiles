@@ -21,3 +21,8 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+[ -f $HOME/.cargo/bin/rustc ] && echo "Rust already installed" || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+cargo install exa
+cargo install starship --locked

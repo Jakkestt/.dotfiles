@@ -67,3 +67,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# Initialize starship
+eval "$(starship init zsh)"
