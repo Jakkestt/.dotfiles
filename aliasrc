@@ -23,7 +23,6 @@ alias \
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	alias \
-			ls="exa -l --icons" \
 			grep="grep --color=auto" \
 			diff="diff --color=auto" \
 			ccat="highlight --out-format=ansi"
@@ -48,3 +47,4 @@ alias \
 
 alias \
 		lf=lfub \
+		ls="exa -l --icons" \
