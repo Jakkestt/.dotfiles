@@ -46,6 +46,7 @@ local config = {
   options = {
     opt = {
       relativenumber = true, -- sets vim.opt.relativenumber
+      tabstop = 4,
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
@@ -284,7 +285,7 @@ local config = {
       return config -- return final config table to use in require("null-ls").setup(config)
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
-      ensure_installed = { "lua", "rust", "c" },
+      ensure_installed = { "lua", "rust", "c", "cpp" },
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
