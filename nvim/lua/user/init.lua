@@ -438,7 +438,7 @@ local config = {
     vim.api.nvim_create_augroup("FormatAutogroup", { clear = true })
     vim.api.nvim_create_autocmd("BufWritePre", {
       desc = "Auto format before save",
-      command = "lua vim.lsp.buf.formatting_sync(nil, 1000)",
+      command = "lua vim.lsp.buf.format()",
     })
 
     -- Set up custom filetypes
