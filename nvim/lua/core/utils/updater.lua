@@ -94,6 +94,15 @@ end
 
 --- AstroNvim's updater function
 function astronvim.updater.update()
+  -- if the git command is not available, then throw an error
+  if not git.available() then
+    astronvim.notify(
+      "git command is not available, please verify it is accessible in a command line. This may be an issue with your PATH",
+      "error"
+    )
+    return
+  end
+
   -- if installed with an external package manager, disable the internal updater
   if not git.is_repo() then
     astronvim.notify("Updater not available for non-git installations", "error")
@@ -159,7 +168,12 @@ function astronvim.updater.update()
   local source = git.local_head() -- calculate current commit
   local target -- calculate target commit
   if is_stable then -- if stable get tag commit
-    options.version = git.latest_version(git.get_versions(options.version or "latest"))
+    local version_search = options.version or "latest"
+    options.version = git.latest_version(git.get_versions(version_search))
+    if not options.version then -- continue only if stable version is found
+      vim.api.nvim_err_writeln("Error finding version: " .. version_search)
+      return
+    end
     target = git.tag_commit(options.version)
   elseif options.commit then -- if commit specified use it
     target = git.branch_contains(options.remote, options.branch, options.commit) and options.commit or nil
