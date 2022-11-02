@@ -28,7 +28,7 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 [ -f $HOME/.cargo/bin/rustc ] && echo "Rust already installed" || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-[ -f $HOME/.cargo/bin/exa ] && echo "Exa already installed" || cargo install exa | sh
-[ -f $HOME/.cargo/bin/starship ] && echo "Starship already installed" || cargo install starship --locked | sh
+[ -f $CARGO_HOME/bin/exa ] && echo "Exa already installed" || cargo install exa | sh
+[ -f $CARGO_HOME/bin/starship ] && echo "Starship already installed" || cargo install starship --locked | sh
 
 nvim +PackerSync
