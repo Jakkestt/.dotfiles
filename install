@@ -30,5 +30,7 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 [ -f $CARGO_HOME/bin/exa ] && echo "Exa already installed" || cargo install exa | sh
 [ -f $CARGO_HOME/bin/starship ] && echo "Starship already installed" || cargo install starship --locked | sh
+[ -f $CARGO_HOME/bin/rg ] && echo "Ripgrep already installed" || cargo install ripgrep | sh
+[ -f $CARGO_HOME/bin/bat ] && echo "Bat already installed" || cargo install bat | sh
 
 nvim +PackerSync
