@@ -10,6 +10,10 @@ git submodule update --remote
 
 set -e
 
+[ -d $HOME/.config/nvim ] && rm -rf ~/.config/nvim
+[ -d $HOME/.local/share/nvim/site ] && rm -rf ~/.local/share/nvim/site
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
 
@@ -24,5 +28,7 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 [ -f $HOME/.cargo/bin/rustc ] && echo "Rust already installed" || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-cargo install exa
-cargo install starship --locked
+# cargo install exa
+# cargo install starship --locked
+
+nvim +PackerSync
