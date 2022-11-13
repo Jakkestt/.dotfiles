@@ -290,7 +290,7 @@ local config = {
 			return config -- return final config table
 		end,
 		treesitter = { -- overrides `require("treesitter").setup(...)`
-			ensure_installed = { "lua", "rust" },
+			ensure_installed = { "lua", "rust", "glsl" },
 		},
 		-- use mason-lspconfig to configure LSP installations
 		["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
@@ -348,7 +348,11 @@ local config = {
 	-- anything that doesn't fit in the normal config locations above can go here
 	polish = function()
 		-- Set up custom filetypes
-		-- vim.filetype.add {
+		vim.filetype.add {
+		    extension = {
+		    	vs = "glsl",
+		    	fs = "glsl",
+		    },
 		--   extension = {
 		--     foo = "fooscript",
 		--   },
@@ -358,7 +362,7 @@ local config = {
 		--   pattern = {
 		--     ["~/%.config/foo/.*"] = "fooscript",
 		--   },
-		-- }
+		}
 	end,
 }
 

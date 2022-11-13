@@ -102,4 +102,4 @@ ex=🎯:\
 *.java=♨:\
 "
 
-setxkbmap -option caps:escape
+eval "$(/opt/homebrew/bin/brew shellenv)"
