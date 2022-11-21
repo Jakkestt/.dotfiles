@@ -26,6 +26,8 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 
+[ -d $HOME/.config/kitty/gruvbox ] && echo "Gruvbox theme for kitty already installed" || git clone https://github.com/wdomitrz/kitty-gruvbox-theme.git $HOME/.config/kitty/gruvbox
+
 [ -f $HOME/.cargo/bin/rustc ] && echo "Rust already installed" || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 [ -f $CARGO_HOME/bin/exa ] && echo "Exa already installed" || cargo install exa | sh
