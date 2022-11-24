@@ -359,7 +359,7 @@ local config = {
     -- anything that doesn't fit in the normal config locations above can go here
     polish = function()
         local timer = vim.loop.new_timer()
-        timer:start(1000, 60000, vim.schedule_wrap(function()
+        timer:start(1000, 10000, vim.schedule_wrap(function()
             vim.cmd.redrawstatus()
         end))
         -- Set up custom filetypes
