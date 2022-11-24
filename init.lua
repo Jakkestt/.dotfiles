@@ -233,8 +233,11 @@ local config = {
                 astronvim.status.component.fill(),
                 {
                     provider = function()
-                        return os.date("%H.%M.%S")
+                        return os.date("%H.%M")
                     end,
+                    update = function()
+                        return true
+                    end
                 },
                 astronvim.status.component.lsp(),
                 astronvim.status.component.treesitter(),
@@ -355,6 +358,10 @@ local config = {
     -- augroups/autocommands and custom filetypes also this just pure lua so
     -- anything that doesn't fit in the normal config locations above can go here
     polish = function()
+        local timer = vim.loop.new_timer()
+        timer:start(1000, 60000, vim.schedule_wrap(function()
+            vim.cmd.redrawstatus()
+        end))
         -- Set up custom filetypes
         vim.filetype.add {
             extension = {
