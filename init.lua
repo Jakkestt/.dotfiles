@@ -277,21 +277,6 @@ local config = {
             color = function()
               return {
                 main = astronvim.status.hl.mode_bg(),
-                right = astronvim.status.hl.mode_bg(),
-              }
-            end,
-          },
-        },
-        -- we want an empty space here so we can use the component builder to make a new section with just an empty string
-        astronvim.status.component.builder {
-          { provider = "" },
-          -- define the surrounding separator and colors to be used inside of the component
-          -- and the color to the right of the separated out section
-          surround = {
-            separator = "left",
-            color = function()
-              return {
-                main = astronvim.status.hl.mode_bg(),
                 right = "file_info_bg",
               }
             end,
@@ -301,8 +286,6 @@ local config = {
         astronvim.status.component.file_info {
           -- enable the file_icon and disable the highlighting based on filetype
           file_icon = { hl = false, padding = { left = 0 } },
-          -- add padding
-          padding = { right = 1 },
           -- define the section separator
           surround = { separator = "left", condition = false },
         },
