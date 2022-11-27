@@ -144,7 +144,7 @@ local config = {
     formatting = {
       format_on_save = true, -- enable or disable auto formatting on save
       disabled = { -- disable formatting capabilities for the listed clients
-        -- "sumneko_lua",
+        "sumneko_lua",
       },
       -- filter = function(client) -- fully override the default formatting function
       --   return true
@@ -201,7 +201,7 @@ local config = {
         desc = "Search files",
       },
       ["<C-q>"] = { "<cmd>Bdelete<cr>" },
-      ["<C-f>"] = function() vim.lsp.buf.formatting_sync() end,
+      ["<C-f>"] = function() vim.lsp.buf.format() end,
       ["<F5>"] = { "<cmd>!cargo run<cr>", desc = "cargo run" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
