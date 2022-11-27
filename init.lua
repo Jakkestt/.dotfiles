@@ -215,6 +215,7 @@ local config = {
   -- add new user interface icon
   icons = {
     VimIcon = "",
+    Clock = "",
   },
   -- modify variables used by heirline but not defined in the setup call directly
   heirline = {
@@ -248,6 +249,7 @@ local config = {
           mode_text = { icon = { kind = "VimIcon", padding = { right = 1, left = 1 } } },
           -- define the highlight color for the text
           hl = { fg = "bg" },
+          padding = { right = 0 },
           -- surround the component with a separators
           surround = {
             -- it's a left element, so use the left separator
@@ -256,7 +258,7 @@ local config = {
             color = function()
               return {
                 main = astronvim.status.hl.mode_bg(),
-                right = "blank_bg",
+                right = astronvim.status.hl.mode_bg(),
               }
             end,
           },
@@ -268,7 +270,12 @@ local config = {
           -- and the color to the right of the separated out section
           surround = {
             separator = "left",
-            color = { main = "blank_bg", right = "file_info_bg" },
+            color = function()
+              return {
+                main = astronvim.status.hl.mode_bg(),
+                right = "file_info_bg",
+              }
+            end,
           },
         },
         -- add a section for the currently opened file information
@@ -300,9 +307,6 @@ local config = {
         astronvim.status.component.fill(),
         -- add a component for the current diagnostics if it exists and use the right separator for the section
         astronvim.status.component.diagnostics { surround = { separator = "right" } },
-        {
-          provider = function() return os.date "%H.%M" end,
-        },
         -- add a component to display LSP clients, disable showing LSP progress, and use the right separator
         astronvim.status.component.lsp { lsp_progress = false, surround = { separator = "right" } },
         -- NvChad has some nice icons to go along with information, so we can create a parent component to do this
@@ -334,6 +338,29 @@ local config = {
             file_read_only = false,
             -- use no separator for this part but define a background color
             surround = { separator = "none", color = "file_info_bg" },
+          },
+        },
+        {
+          astronvim.status.component.builder {
+            -- astronvim.get_icon gets the user interface icon for a closed folder with a space after it
+            { provider = astronvim.get_icon "Clock" },
+            -- add padding after icon
+            padding = { left = 1, right = 1 },
+            -- set the foreground color to be used for the icon
+            hl = { fg = "bg" },
+            -- use the right separator and define the background color
+            surround = {
+              separator = "right",
+              color = { main = "blank_bg", left = "file_info_bg" },
+            },
+          },
+          astronvim.status.component.file_info {
+            filename = { fname = function() return os.date "%H.%M" end, padding = { left = 1 } },
+            hl = { bg = "file_info_bg" },
+            file_icon = false,
+            file_modified = false,
+            file_read_only = false,
+            surround = { separator = "none", color = "file_info_bg", padding = { left = 1, right = 1 } },
           },
         },
         -- the final component of the NvChad statusline is the navigation section
