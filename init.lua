@@ -233,7 +233,7 @@ local config = {
 
   -- add new user interface icon
   icons = {
-    VimIcon = "",
+    VimIcon = "",
     Clock = "",
   },
   -- modify variables used by heirline but not defined in the setup call directly
