@@ -70,6 +70,7 @@ local config = {
       wrap = false, -- sets vim.opt.wrap
       tabstop = 4,
       shiftwidth = 4,
+      updatetime = 50,
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
@@ -93,11 +94,11 @@ local config = {
 
   -- Set dashboard header
   header = {
-    " █████  ███████ ████████ ██████   ██████",
-    "██   ██ ██         ██    ██   ██ ██    ██",
-    "███████ ███████    ██    ██████  ██    ██",
-    "██   ██      ██    ██    ██   ██ ██    ██",
-    "██   ██ ███████    ██    ██   ██  ██████",
+    "    ██  █████  ██   ██ ██   ██ ███████",
+    "    ██ ██   ██ ██ ██   ██ ██   ██     ",
+    "    ██ ███████ ███     ███     ███████",
+    "██  ██ ██   ██ ██ ██   ██ ██   ██     ",
+    " ████  ██   ██ ██   ██ ██   ██ ███████",
     " ",
     "    ███    ██ ██    ██ ██ ███    ███",
     "    ████   ██ ██    ██ ██ ████  ████",
@@ -357,12 +358,19 @@ local config = {
             },
           },
           astronvim.status.component.file_info {
-            filename = { fname = function() return os.date "%H.%M" end, padding = { left = 1 } },
+            filename = {
+              fname = function() return os.date "%H.%M" end,
+              padding = { left = 1 },
+            },
             hl = { bg = "file_info_bg" },
             file_icon = false,
             file_modified = false,
             file_read_only = false,
-            surround = { separator = "none", color = "file_info_bg", padding = { left = 1, right = 1 } },
+            surround = {
+              separator = "none",
+              color = "file_info_bg",
+              padding = { left = 1, right = 1 },
+            },
           },
         },
         -- the final component of the NvChad statusline is the navigation section
@@ -457,6 +465,8 @@ local config = {
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
       ensure_installed = { "lua", "rust", "glsl" },
+      sync_install = false,
+      auto_install = true,
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
