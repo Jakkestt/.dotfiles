@@ -71,6 +71,7 @@ local config = {
       tabstop = 4,
       shiftwidth = 4,
       updatetime = 50,
+      cmdheight = 1,
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
