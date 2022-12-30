@@ -94,11 +94,11 @@ local config = {
 
   -- Set dashboard header
   header = {
-    "    ██  █████  ██   ██ ██   ██ ███████",
-    "    ██ ██   ██ ██ ██   ██ ██   ██     ",
-    "    ██ ███████ ███     ███     ███████",
-    "██  ██ ██   ██ ██ ██   ██ ██   ██     ",
-    " ████  ██   ██ ██   ██ ██   ██ ███████",
+    "     ██  █████  ██   ██ ██   ██ ██████",
+    "     ██ ██   ██ ██ ██   ██ ██   ██    ",
+    "     ██ ███████ ███     ███     ██████",
+    " ██  ██ ██   ██ ██ ██   ██ ██   ██    ",
+    "  ████  ██   ██ ██   ██ ██   ██ ██████",
     " ",
     "    ███    ██ ██    ██ ██ ███    ███",
     "    ████   ██ ██    ██ ██ ████  ████",
@@ -165,6 +165,7 @@ local config = {
       format_on_save = true, -- enable or disable auto formatting on save
       disabled = { -- disable formatting capabilities for the listed clients
         "sumneko_lua",
+        "denols",
       },
       -- filter = function(client) -- fully override the default formatting function
       --   return true
