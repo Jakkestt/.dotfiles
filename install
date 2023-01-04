@@ -3,16 +3,14 @@
 git submodule update --remote
 
 [ -f $HOME/.nvm/nvm.sh ] && echo "Nvm already exists" ||  mkdir ~/.nvm | curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-
-[ -f $HOME/.local/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] && echo "Fast Syntax Highlighting already cloned" || git clone https://github.com/zdharma-continuum/fast-syntax-highlighting $HOME/.local/share/zsh/plugins/fast-syntax-highlighting | bash
-
-[ -f $HOME/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh ] && echo "Zsh Autosuggestions already cloned" || git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.local/share/zsh/plugins/zsh-autosuggestions | bash
+[ -f $HOME/.local/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] && echo "Fast Syntax Highlighting already cloned" || git clone https://github.com/zdharma-continuum/fast-syntax-highlighting $HOME/.local/share/zsh/plugins/fast-syntax-highlighting
+[ -f $HOME/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh ] && echo "Zsh Autosuggestions already cloned" || git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.local/share/zsh/plugins/zsh-autosuggestions
+[ -d $HOME/.config/kitty/gruvbox ] && echo "Kitty Gruvbox already cloned" || git clone https://github.com/wdomitrz/kitty-gruvbox-theme.git $HOME/.config/kitty/gruvbox
 
 set -e
 
-[ -d $HOME/.config/nvim ] && rm -rf ~/.config/nvim
-[ -d $HOME/.local/share/nvim/site ] && rm -rf ~/.local/share/nvim/site
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+# Ask the user if we can delete these?
+[ -d $HOME/.config/nvim ] && echo "Nvim config detected" || git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"

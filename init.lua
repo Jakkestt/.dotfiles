@@ -26,9 +26,9 @@ local config = {
   },
 
   -- Set colorscheme to use
-  -- colorscheme = "gruvbox-material",
+  colorscheme = "gruvbox-material",
   -- colorscheme = "default_theme",
-  colorscheme = "catppuccin",
+  -- colorscheme = "catppuccin",
 
   highlights = {
     -- set highlights for all themes
