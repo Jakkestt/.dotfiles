@@ -9,7 +9,7 @@ local config = {
   -- Configure AstroNvim updates
   updater = {
     remote = "origin", -- remote to use
-    channel = "nightly", -- "stable" or "nightly"
+    channel = "stable", -- "stable" or "nightly"
     version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
     branch = "main", -- branch name (NIGHTLY ONLY)
     commit = nil, -- commit hash (NIGHTLY ONLY)
@@ -72,6 +72,16 @@ local config = {
       shiftwidth = 4,
       updatetime = 50,
       cmdheight = 1,
+      listchars = {
+        tab = "❘-",
+        trail = "·",
+        lead = "·",
+        extends = "»",
+        precedes = "«",
+        nbsp = "×",
+        eol = "",
+      },
+      list = true,
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
@@ -417,6 +427,7 @@ local config = {
     init = {
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
+      -- ["lukas-reineke/indent-blankline.nvim"] = { disable = false },
 
       -- You can also add new plugins here as well:
       -- Add plugins, the packer syntax without the "use"
