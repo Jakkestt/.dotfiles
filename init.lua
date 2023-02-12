@@ -427,8 +427,6 @@ local config = {
     init = {
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
-      -- ["lukas-reineke/indent-blankline.nvim"] = { disable = false },
-
       -- You can also add new plugins here as well:
       -- Add plugins, the packer syntax without the "use"
       -- { "andweeb/presence.nvim" },
@@ -476,6 +474,7 @@ local config = {
       }
       return config -- return final config table
     end,
+    ["lukas-reineke/indent-blankline.nvim"] = { disable = true },
     treesitter = { -- overrides `require("treesitter").setup(...)`
       ensure_installed = { "lua", "rust", "glsl" },
       sync_install = false,
