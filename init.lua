@@ -79,7 +79,7 @@ local config = {
         extends = "»",
         precedes = "«",
         nbsp = "×",
-        eol = "",
+        -- eol = "",
       },
       list = true,
     },
@@ -474,7 +474,7 @@ local config = {
       }
       return config -- return final config table
     end,
-    ["lukas-reineke/indent-blankline.nvim"] = { disable = true },
+    indent_blankline = { char = "", context_char = "" },
     treesitter = { -- overrides `require("treesitter").setup(...)`
       ensure_installed = { "lua", "rust", "glsl" },
       sync_install = false,
