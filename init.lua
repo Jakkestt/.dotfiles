@@ -557,3 +557,4 @@ local config = {
 }
 
 return config
+-- This is a comment
