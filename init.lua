@@ -26,8 +26,8 @@ local config = {
   },
 
   -- Set colorscheme to use
-  colorscheme = "gruvbox-material",
-  -- colorscheme = "default_theme",
+  -- colorscheme = "gruvbox-material",
+  colorscheme = "default_theme",
   -- colorscheme = "catppuccin",
 
   highlights = {
@@ -73,7 +73,7 @@ local config = {
       updatetime = 50,
       cmdheight = 1,
       listchars = {
-        tab = "❘-",
+        tab = "|·",
         trail = "·",
         lead = "·",
         extends = "»",
@@ -557,4 +557,3 @@ local config = {
 }
 
 return config
--- This is a comment
