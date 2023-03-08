@@ -479,6 +479,9 @@ local config = {
       ensure_installed = { "lua", "rust", "glsl" },
       sync_install = false,
       auto_install = true,
+      rainbow = {
+        enable = false,
+      },
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
