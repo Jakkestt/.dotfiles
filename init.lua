@@ -476,7 +476,7 @@ local config = {
     end,
     indent_blankline = { char = "", context_char = "" },
     treesitter = { -- overrides `require("treesitter").setup(...)`
-      ensure_installed = { "lua", "rust", "glsl" },
+      ensure_installed = { "lua", "rust", "glsl", "comment" },
       sync_install = false,
       auto_install = true,
       rainbow = {
