@@ -443,6 +443,13 @@ local config = {
         config = function() vim.g.gruvbox_material_foreground = "original" end,
       },
       {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function() require("copilot").setup() end,
+      },
+      { "zbirenbaum/copilot-cmp" },
+      {
         "catppuccin/nvim",
         as = "catppuccin",
         config = function()
