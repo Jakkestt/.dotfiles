@@ -446,9 +446,21 @@ local config = {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
         event = "InsertEnter",
-        config = function() require("copilot").setup() end,
+        config = function()
+          require("copilot").setup {
+            suggestions = { enabled = false },
+            panel = { enabled = false },
+          }
+        end,
       },
-      { "zbirenbaum/copilot-cmp" },
+      {
+        "zbirenbaum/copilot-cmp",
+        after = { "nvim-cmp" },
+        config = function()
+          require("copilot_cmp").setup()
+          astronvim.add_user_cmp_source "copilot"
+        end,
+      },
       {
         "catppuccin/nvim",
         as = "catppuccin",
@@ -498,6 +510,12 @@ local config = {
     ["mason-null-ls"] = { -- overrides `require("mason-null-ls").setup(...)`
       -- ensure_installed = { "prettier", "stylua" },
     },
+    lspkind = function(config)
+      config.symbol_map = {
+        Copilot = "",
+      }
+      return config
+    end,
   },
 
   -- LuaSnip Options
@@ -518,10 +536,11 @@ local config = {
   -- true == 1000
   cmp = {
     source_priority = {
-      nvim_lsp = 1000,
+      nvim_lsp = 900,
       luasnip = 750,
       buffer = 500,
       path = 250,
+      copilot = 1000,
     },
   },
 
