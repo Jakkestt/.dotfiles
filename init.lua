@@ -5,31 +5,28 @@
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
 local config = {
-
   -- Configure AstroNvim updates
   updater = {
-    remote = "origin", -- remote to use
-    channel = "stable", -- "stable" or "nightly"
-    version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
-    branch = "main", -- branch name (NIGHTLY ONLY)
-    commit = nil, -- commit hash (NIGHTLY ONLY)
-    pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
-    skip_prompts = false, -- skip prompts about breaking changes
+    remote = "origin",     -- remote to use
+    channel = "stable",    -- "stable" or "nightly"
+    version = "latest",    -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
+    branch = "main",       -- branch name (NIGHTLY ONLY)
+    commit = nil,          -- commit hash (NIGHTLY ONLY)
+    pin_plugins = nil,     -- nil, true, false (nil will pin plugins on stable only)
+    skip_prompts = false,  -- skip prompts about breaking changes
     show_changelog = true, -- show the changelog after performing an update
-    auto_reload = false, -- automatically reload and sync packer after a successful update
-    auto_quit = false, -- automatically quit the current session after a successful update
+    auto_reload = false,   -- automatically reload and sync packer after a successful update
+    auto_quit = false,     -- automatically quit the current session after a successful update
     -- remotes = { -- easily add new remotes to track
     --   ["remote_name"] = "https://remote_url.come/repo.git", -- full remote url
     --   ["remote2"] = "github_user/repo", -- GitHub user/repo shortcut,
     --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
     -- },
   },
-
   -- Set colorscheme to use
   -- colorscheme = "gruvbox-material",
   -- colorscheme = "default_theme",
   colorscheme = "catppuccin",
-
   highlights = {
     -- set highlights for all themes
     -- use a function override to let us use lua to retrieve colors from highlight group
@@ -58,16 +55,15 @@ local config = {
       }
     end,
   },
-
   -- set vim options here (vim.<first_key>.<second_key> =  value)
   options = {
     opt = {
       -- set to true or false etc.
       relativenumber = true, -- sets vim.opt.relativenumber
-      number = true, -- sets vim.opt.number
-      spell = false, -- sets vim.opt.spell
-      signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-      wrap = false, -- sets vim.opt.wrap
+      number = true,         -- sets vim.opt.number
+      spell = false,         -- sets vim.opt.spell
+      signcolumn = "auto",   -- sets vim.opt.signcolumn to auto
+      wrap = false,          -- sets vim.opt.wrap
       tabstop = 4,
       shiftwidth = 4,
       updatetime = 50,
@@ -84,10 +80,10 @@ local config = {
       list = true,
     },
     g = {
-      mapleader = " ", -- sets vim.g.mapleader
-      cmp_enabled = true, -- enable completion at start
-      autopairs_enabled = true, -- enable autopairs at start
-      diagnostics_enabled = true, -- enable diagnostics at start
+      mapleader = " ",                   -- sets vim.g.mapleader
+      cmp_enabled = true,                -- enable completion at start
+      autopairs_enabled = true,          -- enable autopairs at start
+      diagnostics_enabled = true,        -- enable diagnostics at start
       status_diagnostics_enabled = true, -- enable diagnostics in statusline
       sonokai_style = "shusia",
       catppuccin_flavour = "mocha",
@@ -117,7 +113,6 @@ local config = {
     "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
     "    ██   ████   ████   ██ ██      ██",
   },
-
   -- Default theme configuration
   default_theme = {
     -- Modify the color palette for the default theme
@@ -159,13 +154,11 @@ local config = {
       ["which-key"] = true,
     },
   },
-
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
     underline = true,
   },
-
   -- Extend LSP configuration
   lsp = {
     -- enable servers that you already have installed without mason
@@ -174,7 +167,7 @@ local config = {
     },
     formatting = {
       format_on_save = true, -- enable or disable auto formatting on save
-      disabled = { -- disable formatting capabilities for the listed clients
+      disabled = {           -- disable formatting capabilities for the listed clients
         "sumneko_lua",
         "denols",
       },
@@ -218,7 +211,6 @@ local config = {
       },
     },
   },
-
   -- Mapping data with "desc" stored directly by vim.keymap.set().
   --
   -- Please use this mappings table to set keyboard mapping since this is the
@@ -248,7 +240,6 @@ local config = {
       -- ["<esc>"] = false,
     },
   },
-
   -- add new user interface icon
   icons = {
     VimIcon = "",
@@ -499,7 +490,8 @@ local config = {
       return config -- return final config table
     end,
     indent_blankline = { char = "", context_char = "" },
-    treesitter = { -- overrides `require("treesitter").setup(...)`
+    treesitter = {
+                   -- overrides `require("treesitter").setup(...)`
       ensure_installed = { "lua", "rust", "glsl", "comment" },
       sync_install = false,
       auto_install = true,
@@ -522,7 +514,6 @@ local config = {
       return config
     end,
   },
-
   -- LuaSnip Options
   luasnip = {
     -- Add paths for including more VS Code style snippets in luasnip
@@ -532,7 +523,6 @@ local config = {
       -- javascript = { "javascriptreact" },
     },
   },
-
   -- CMP Source Priorities
   -- modify here the priorities of default cmp sources
   -- higher value == higher priority
@@ -548,7 +538,6 @@ local config = {
       copilot = 1000,
     },
   },
-
   -- Modify which-key registration (Use this with mappings table in the above.)
   ["which-key"] = {
     -- Add bindings which show up as group name
@@ -564,7 +553,6 @@ local config = {
       },
     },
   },
-
   -- This function is run last and is a good place to configuring
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
