@@ -41,7 +41,8 @@ alias \
 		ga="git add" \
 		gpa="git patch" \
 		gpu="git push" \
-		gcl="git clone"
+		gcl="git clone" \
+		gg="lazygit"
 
 # Misc
 
