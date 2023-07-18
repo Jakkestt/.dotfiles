@@ -3,51 +3,52 @@
 # General stuff
 
 alias \
-		python=python3 \
-		pip="python3 -m pip" \
-		tmux="tmux -f ~/.config/tmux/tmux.conf" \
-		code=codium \
+	python=python3 \
+	pip="python3 -m pip" \
+	tmux="tmux -f ~/.config/tmux/tmux.conf" \
+	code=codium
 
 # Settings that apparently I will always want
-		
+
 alias \
-		cp="cp -iv" \
-		mv="mv -iv" \
-		bc="bc -ql" \
-		mkd="mkdir -pv" \
-		yt="youtube-dl --add-metadata -i" \
-		yta="yt -o '/home/jarkko/Music/%(title)s-%(id)s.%(ext)s' -x -f bestaudio/best" \
-		ffmpeg="ffmpeg -hide_banner" \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	bc="bc -ql" \
+	mkd="mkdir -pv" \
+	yt="yt-dlp --add-metadata -i" \
+	yta="yt -o '/home/jarkko/Music/%(title)s-%(id)s.%(ext)s' -x -f bestaudio/best" \
+	ffmpeg="ffmpeg -hide_banner"
 
 # Colorize commands when possible
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	alias \
-			grep="grep --color=auto" \
-			diff="diff --color=auto" \
-			ccat="highlight --out-format=ansi"
-			rm="rm -vI" \
+		grep="grep --color=auto" \
+		diff="diff --color=auto" \
+		ccat="highlight --out-format=ansi" \
+		rm="rm -vI" \
+		;
 fi
 
 # Git stuff
 
 alias \
-		g=git \
-		gs="git status" \
-		gr="git restore" \
-		gp="git pull" \
-		gc="git commit" \
-		gd="git diff" \
-		ga="git add" \
-		gpa="git patch" \
-		gpu="git push" \
-		gcl="git clone" \
-		gg="lazygit"
+	g=git \
+	gs="git status" \
+	gr="git restore" \
+	gp="git pull" \
+	gc="git commit" \
+	gd="git diff" \
+	ga="git add" \
+	gpa="git patch" \
+	gpu="git push" \
+	gcl="git clone" \
+	gg="lazygit"
 
 # Misc
 
 alias \
-		lf=lfub \
-		ls="exa -l --icons" \
-		grep="rg" \
-		cat="bat" \
+	lf=lfub \
+	ls="exa -l --icons" \
+	grep="rg" \
+	cat="bat"
