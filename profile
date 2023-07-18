@@ -11,3 +11,6 @@ export CARGO_HOME="$HOME/.local/share/cargo"
 setxkbmap -option caps:escape
 . "$HOME/.cargo/env"
 . "/home/jarkko/.local/share/cargo/env"
+
+
+
