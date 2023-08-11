@@ -28,6 +28,8 @@ local mappings = {
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+    -- Enter normal mode in terminal by pressing CTRL+Escape
+    ["<A-Esc>"] = "<C-\\><C-n>",
   },
 }
 
