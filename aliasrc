@@ -17,6 +17,7 @@ alias \
 	mkd="mkdir -pv" \
 	yt="yt-dlp --add-metadata -i" \
 	yta="yt -o '/home/jarkko/Music/%(title)s-%(id)s.%(ext)s' -x -f bestaudio/best" \
+	ytm="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner"
 
 # Colorize commands when possible

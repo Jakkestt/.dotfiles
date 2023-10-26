@@ -13,7 +13,7 @@
       - ~/.config/lf
       - ~/.local/bin
       - ~/.config/zathura
-      - ~/.config/kitty
+      - ~/.config/alacritty
 
 - link:
       ~/.zprofile: zprofile
@@ -29,7 +29,7 @@
       ~/.local/bin/lfub: lfub
       ~/.local/bin/rotdir: rotdir
       ~/.config/zathura/zathurarc: zathurarc
-      ~/.config/kitty/kitty.conf: kitty.conf
+      ~/.config/alacritty/alacritty.toml: alacritty.toml
 
 - shell:
       - [
