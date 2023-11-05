@@ -1,4 +1,5 @@
 return {
+  colorscheme = "monokai-pro",
   highlights = {
     -- set highlights for all themes
     -- use a function override to let us use lua to retrieve colors from highlight group
