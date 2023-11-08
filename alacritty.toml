@@ -9,7 +9,7 @@ size = 18.0
   primary = { background = '0x272822', foreground = '0xF8F8F2' }
 
   [colors.normal]
-    black = '0x272822'
+    black = '0x3b3c35'
     red = '0xF92672'
     green = '0xA6E22E'
     yellow = '0xF4BF75'
@@ -19,7 +19,7 @@ size = 18.0
     white = '0xF8F8F2'
 
   [colors.bright]
-    black = '0x272822'
+    black = '0x3b3c35'
     red = '0xF92672'
     green = '0xA6E22E'
     yellow = '0xF4BF75'
