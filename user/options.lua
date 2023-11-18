@@ -10,5 +10,6 @@ return {
     shiftwidth = 4,
     updatetime = 50,
     cmdheight = 1,
+    showtabline = 0,
   },
 }

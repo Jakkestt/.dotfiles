@@ -12,9 +12,6 @@ local mappings = {
       desc = "Search files",
     },
     ["<C-f>"] = function() vim.lsp.buf.format() end,
-    ["<C-q>"] = function() require("astronvim.utils.buffer").close() end,
-    ["<S-h>"] = function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-    ["<S-l>"] = function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
     ["<leader>G"] = { name = " GitHub" },
     ["<leader>Gi"] = { "<cmd>Octo issue list<cr>", desc = "Open Issues" },
     ["<leader>GI"] = { "<cmd>Octo issue search<cr>", desc = "Search Issues" },
@@ -29,7 +26,7 @@ local mappings = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
     -- Enter normal mode in terminal by pressing CTRL+Escape
-    ["<A-Esc>"] = "<C-\\><C-n>",
+    ["<C-Esc>"] = "<C-\\><C-n>",
   },
 }
 
