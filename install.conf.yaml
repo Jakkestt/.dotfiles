@@ -14,6 +14,7 @@
       - ~/.local/bin
       - ~/.config/zathura
       - ~/.config/alacritty
+      - ~/.config/helix
 
 - link:
       ~/.zprofile: zprofile
@@ -30,6 +31,8 @@
       ~/.local/bin/rotdir: rotdir
       ~/.config/zathura/zathurarc: zathurarc
       ~/.config/alacritty/alacritty.toml: alacritty.toml
+      ~/.config/helix/config.toml: config.toml
+      ~/.config/helix/languages.toml: languages.toml
 
 - shell:
       - [

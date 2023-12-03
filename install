@@ -10,7 +10,7 @@ git submodule update --remote
 set -e
 
 # Ask the user if we can delete these?
-[ -d $HOME/.config/nvim ] && echo "Nvim config detected" || git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+#[ -d $HOME/.config/nvim ] && echo "Nvim config detected" || git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
@@ -31,4 +31,4 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 [ -f $CARGO_HOME/bin/rg ] && echo "Ripgrep already installed" || cargo install ripgrep | sh
 [ -f $CARGO_HOME/bin/bat ] && echo "Bat already installed" || cargo install bat | sh
 
-nvim +PackerSync
+#nvim +PackerSync
