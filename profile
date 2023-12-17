@@ -6,11 +6,8 @@ export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 #export GDK_BACKEND=wayland
 #export CLUTTER_BACKEND=wayland
 #export SDL_VIDEODRIVER=wayland
-export CARGO_HOME="$HOME/.local/share/cargo"
 
 setxkbmap -option caps:escape
-. "$HOME/.cargo/env"
 . "/home/jarkko/.local/share/cargo/env"
 
-
-
+. "$HOME/.cargo/env"
