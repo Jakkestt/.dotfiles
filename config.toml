@@ -1,4 +1,4 @@
-theme = "monokai"
+theme = "gruvbox"
 
 [keys.normal]
 g = { a = "code_action" }

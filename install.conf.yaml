@@ -22,7 +22,6 @@
       ~/.config/tmux/tmux.conf: tmux.conf
       ~/.config/zsh/.zshrc: zshrc
       ~/.config/git/config: gitconfig
-      ~/.config/nvim/lua/user: user/
       ~/.config/shell/aliasrc: aliasrc
       ~/.config/lf/lfrc: lfrc
       ~/.config/lf/scope: scope
