@@ -5,11 +5,13 @@ g = { a = "code_action" }
 C-p = "file_picker"
 C-b = "buffer_picker"
 S-k = "hover"
+C-l = "jump_view_right"
+C-h = "jump_view_left"
+C-q = "wclose"
 
 [editor]
 line-number = "relative"
 cursorline = true
-rulers = [120]
 true-color = true
 
 [editor.cursor-shape]
