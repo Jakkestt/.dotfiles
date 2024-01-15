@@ -12,6 +12,8 @@ A-d = "half_page_down"
 A-u = "half_page_up"
 A-j = "page_down"
 A-k = "page_up"
+X = ["extend_line_up", "extend_to_line_bounds"]
+A-x = "extend_to_line_bounds"
 
 [editor]
 line-number = "relative"
@@ -36,3 +38,7 @@ render = true
 [keys.normal."+"]
 h = ["select_all", ":pipe xxd"]
 r = ["select_all", ":pipe xxd -r"]
+
+[keys.select]
+X = ["extend_line_up", "extend_to_line_bounds"]
+A-x = "extend_to_line_bounds"
