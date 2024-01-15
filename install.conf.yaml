@@ -13,8 +13,8 @@
       - ~/.config/lf
       - ~/.local/bin
       - ~/.config/zathura
-      - ~/.config/alacritty
       - ~/.config/helix
+      - ~/.config/wezterm
 
 - link:
       ~/.zprofile: zprofile
@@ -29,9 +29,9 @@
       ~/.local/bin/lfub: lfub
       ~/.local/bin/rotdir: rotdir
       ~/.config/zathura/zathurarc: zathurarc
-      ~/.config/alacritty/alacritty.toml: alacritty.toml
       ~/.config/helix/config.toml: config.toml
       ~/.config/helix/languages.toml: languages.toml
+      ~/.config/wezterm/wezterm.lua: wezterm.lua
 
 - shell:
       - [
