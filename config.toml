@@ -32,3 +32,7 @@ left = ["mode", "spinner", "version-control", "file-name"]
 
 [editor.indent-guides]
 render = true
+
+[keys.normal."+"]
+h = ["select_all", ":pipe xxd"]
+r = ["select_all", ":pipe xxd -r"]
