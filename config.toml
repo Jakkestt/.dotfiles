@@ -2,12 +2,16 @@ theme = "gruvbox"
 
 [keys.normal]
 g = { a = "code_action" }
-C-p = "file_picker"
-C-b = "buffer_picker"
+A-p = "file_picker"
+A-b = "buffer_picker"
 S-k = "hover"
-C-l = "jump_view_right"
-C-h = "jump_view_left"
-C-q = "wclose"
+A-l = "jump_view_right"
+A-h = "jump_view_left"
+A-q = "wclose"
+A-d = "half_page_down"
+A-u = "half_page_up"
+A-j = "page_down"
+A-k = "page_up"
 
 [editor]
 line-number = "relative"
