@@ -6,4 +6,4 @@
 #	name = Jarkko Arffman
 #	email = jakkee116@gmail.com
 [core]
-	editor = nvim
+	editor = hx

@@ -41,7 +41,7 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 export PATH="/home/jarkko/.local/bin:/Users/Jakkest/Library/Python/3.8/bin:/home/jarkko/go/bin:/Users/Jakkest/.cargo/bin:$PATH:/usr/local/go/bin"
-export EDITOR=nvim
+export EDITOR=hx
 
 source $HOME/.local/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2> /dev/null
 source $HOME/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh 2> /dev/null
@@ -69,3 +69,5 @@ unset __conda_setup
 
 # Initialize starship
 eval "$(starship init zsh)"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
