@@ -4,3 +4,7 @@ auto-format = true
 
 [language-server.rust-analyzer.config.check]
 command = "clippy"
+
+[[language]]
+name = "glsl"
+file-types = ["vs", "fs"]

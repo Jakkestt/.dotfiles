@@ -31,7 +31,7 @@
       ~/.config/zathura/zathurarc: zathurarc
       ~/.config/helix/config.toml: config.toml
       ~/.config/helix/languages.toml: languages.toml
-      ~/.config/wezterm/wezterm.lua: wezterm.lua
+      ~/.config/alacritty/alacritty.toml: alacritty.toml
 
 - shell:
       - [

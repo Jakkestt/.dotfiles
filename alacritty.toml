@@ -27,9 +27,3 @@ size = 18.0
     magenta = '0xd3869b'
     cyan = '0x8ec07c'
     white = '0xebdbb2'
-
-[keyboard]
-bindings = [
-  { key = "T", mods = "super", action = "CreateNewTab" },
-  { key = "Tab", mods = "Control", action = "SelectNextTab" },
-]
