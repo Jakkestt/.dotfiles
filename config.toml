@@ -1,19 +1,20 @@
-theme = "gruvbox"
+theme = "monokai"
 
 [keys.normal]
 g = { a = "code_action" }
-A-p = "file_picker"
-A-b = "buffer_picker"
+C-p = "file_picker"
+C-b = "buffer_picker"
 S-k = "hover"
-A-l = "jump_view_right"
-A-h = "jump_view_left"
-A-q = "wclose"
-A-d = "half_page_down"
-A-u = "half_page_up"
-A-j = "page_down"
-A-k = "page_up"
+C-l = "jump_view_right"
+C-h = "jump_view_left"
+C-q = "wclose"
+C-d = "half_page_down"
+C-u = "half_page_up"
+C-j = "page_down"
+C-k = "page_up"
 X = ["extend_line_up", "extend_to_line_bounds"]
-A-x = "extend_to_line_bounds"
+C-x = "extend_to_line_bounds"
+F5 = ":sh cargo r"
 
 [editor]
 line-number = "relative"
@@ -41,4 +42,4 @@ r = ["select_all", ":pipe xxd -r"]
 
 [keys.select]
 X = ["extend_line_up", "extend_to_line_bounds"]
-A-x = "extend_to_line_bounds"
+C-x = "extend_to_line_bounds"

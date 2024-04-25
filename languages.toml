@@ -8,3 +8,18 @@ command = "clippy"
 [[language]]
 name = "glsl"
 file-types = ["vs", "fs"]
+
+[language-server.clangd]
+command = "clangd"
+args = [
+"--log=verbose",
+"--query-driver=/usr/bin/g++"
+]
+
+[[language]]
+name = "cpp"
+language-servers = ["clangd"] # One or more language servers.
+file-types = ["cpp", "h"]
+comment-token = "//" 
+auto-format = true
+indent = { tab-width = 2, unit = "    " }
