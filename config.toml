@@ -1,4 +1,4 @@
-theme = "monokai"
+theme = "onedark"
 
 [keys.normal]
 g = { a = "code_action" }
