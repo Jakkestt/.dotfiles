@@ -32,6 +32,8 @@
       ~/.config/helix/config.toml: config.toml
       ~/.config/helix/languages.toml: languages.toml
       ~/.config/alacritty/alacritty.toml: alacritty.toml
+      ~/.config/helix/themes: themes
+      ~/.config/alacritty/mythemes: mythemes
 
 - shell:
       - [

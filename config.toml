@@ -1,4 +1,4 @@
-theme = "onedark"
+theme = "mydark"
 
 [keys.normal]
 g = { a = "code_action" }
