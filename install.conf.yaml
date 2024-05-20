@@ -15,6 +15,7 @@
       - ~/.config/zathura
       - ~/.config/helix
       - ~/.config/wezterm
+      - ~/.config/alacritty
 
 - link:
       ~/.zprofile: zprofile
