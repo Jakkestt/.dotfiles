@@ -1,4 +1,4 @@
-theme = "mydark"
+theme = "gruvbox"
 
 [keys.normal]
 g = { a = "code_action" }
@@ -43,3 +43,6 @@ r = ["select_all", ":pipe xxd -r"]
 [keys.select]
 X = ["extend_line_up", "extend_to_line_bounds"]
 C-x = "extend_to_line_bounds"
+
+[editor.soft-wrap]
+enable = true

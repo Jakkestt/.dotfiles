@@ -1,9 +1,10 @@
+[general]
 import = [
-    "~/.config/alacritty/mythemes/darkplus.toml"
+    "~/.config/alacritty/mythemes/gruvbox_dark.toml"
 ]
 
 [font.normal]
-family = "RobotoMono Nerd Font"
+family = "Agave Nerd Font"
 
 [font]
 size = 18.0
