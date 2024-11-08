@@ -71,5 +71,3 @@ unset __conda_setup
 
 # Initialize starship
 eval "$(starship init zsh)"
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
